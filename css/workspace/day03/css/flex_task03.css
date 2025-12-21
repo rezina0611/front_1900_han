@@ -1,0 +1,38 @@
+.border{
+  border: 3px solid #000;
+  width: 504px;
+  padding: 20px;
+}
+.wrap{
+  display: flex;
+  flex-wrap: wrap;
+  width: 504px;
+  gap: 4px;
+}
+.green{
+  width: 300px;
+  height: 200px;
+  background-color: green;
+}
+.yellow{
+  width: 200px;
+  height: 200px;
+  border-radius: 100%;
+  background-color: yellow;
+}
+.pink{
+  width: 300px;
+  height: 300px;
+  background-color: pink;
+}
+.box-wrap{
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.box{
+  width: 200px;
+  height: 100px;
+  background-color: blue;
+}
+

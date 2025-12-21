@@ -1,0 +1,24 @@
+/*
+  px : 절대크기
+  % : 부모에 대한 상대크기
+  vw, vh, dvw, dvh : 브라우저에 대한 상대 크기
+*/
+#m-wrap{
+  width: 480px;
+  height: 700px;
+  border: 2px solid black;
+}
+
+#content{
+  width: calc(100% - 40px);
+  height: 700px;
+  margin: 0 auto;
+  background-color: green;
+}
+
+.image-wrapper{
+  width: 400px;
+  height: 250px;
+  background-image: url(../assets/livia-NEFZEwCTyb0-unsplash.jpg);
+  background-size: cover;
+}

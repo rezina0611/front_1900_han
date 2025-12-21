@@ -1,0 +1,171 @@
+유저 이메일 : rezina0611.naver.com
+유저 이름 : rezina0611
+
+github.com
+han06110@naver.com
+rezina@#7248
+
+hsnjs77@gmail.com  rezina@#7248
+
+git 설치 C:\Git
+
+git config --global user.name "rezina0611"
+
+
+git github 
+
+개발한것을 웹서버에 올리는것
+
+형상관리 = 버전관리
+
+SVN은 Subversion의 줄임말로, 중앙 버전 관리 시스템입니다. 여러 사람이 함께 프로젝트를 개발할 때 소스 코드의 변경 이력을 관리하고, 소스 중복을 방지하며, 버전 관리를 용이하게 하기 위해 사용되는 오픈 소스 소프트웨어입니다.SVN의 주요 기능에는 디렉터리 및 메타데이터의 버전 관리, 원자적 커밋(Atomic Commit), 효율적인 브랜치 및 태그 작성이 포함됩니다. 
+
+폴더 오른쪽클릭 -> 추가옵션표시 -> open git bash here
+
+
+깃 설정
+   깃 허브 계정 이름 등록
+   > git config --global user.name "이름"
+   깃 허브 계정 이메일 등록
+   > git config --global user.email "이메일"
+
+명령어
+   1) 깃 초기화
+   > git init
+
+   2) 깃 작업 파일 확인
+   > git status
+   
+   3) 깃 스테이징
+   - 폴더 전체
+   > git add .
+   - 하나의 파일
+   > git add [파일명]
+   
+   4) 깃 언스테이징(필요시)
+   > git rm --cached [파일명]
+   
+   5) 깃 버전 생성
+   > git commit -m [메세지]
+
+   6) 깃 버전 확인
+   > git log
+   
+   7) 이전 버전으로 리셋
+   > git reset --hard
+
+   8) 특정 버전으로 메인 브랜치 리셋
+   > git reset --hard "log ID"
+   
+깃 브랜치 명령어
+   1. 깃 브랜치 확인   
+   > git branch
+   
+   2. 깃 브랜치 이동
+   > git checkout [브랜치명]
+
+   3. 깃 브랜치 병합
+   > git merge [브랜치명]
+
+   4. 깃 브랜치 삭제
+   > git branch -D [브랜치명]
+
+
+
+  git checkout 키카피에서 넣기
+  git status -> 파일 수정 -> git add . -> git commit -m "v2" -> git log
+
+  git checkout master
+  브랜치 간 전환 또는 현재 작업 중인 파일들을 복원할 때 사용됩니다.
+
+  브랜치
+  Git의 브랜치는 커밋 사이를 가볍게 이동할 수 있는 어떤 포인터 같은 것이다. 기본적으로 Git은 master 브랜치를 만든다. 처음 커밋하면 이 master 브랜치가 생성된 커밋 ...
+
+  post -> main  합쳐져야 한다  명령어 merge
+
+
+  v1 카피본 로그인, 블로그
+
+  로그인 커밋
+  블로그 커밋
+
+  메인으로 이동  merge 로그인, marge 블로그
+
+실습
+1. 댓글 브랜치 생성 후   
+git branch reply
+git branch
+git checkout reply
+
+2. 댓글 파일 제작  
+Reply.txt
+3. 댓글 브랜치 커밋
+4. 메인 브랜치에 댓글 서비스를 적용
+
+
+
+
+깃 허브 관련 명령어
+1. 레포지토리 연결
+> git remote add [이름] [레포지토리 경로]
+> git remote add origin "http~~.git"
+  * 개인 레포지토리 이름은 무조건 origin
+  * 팀 레포지토리 이름은 무조건 project
+
+2. 레포지토리 삭제
+> git remote remove [이름]
+
+3. 레포지토리 연결 확인
+> git remote -v
+
+4. 레포지토리에 파일 업로드
+> git push [~로] [브랜치명]
+> git push origin master
+
+5. 레포지토리에 파일 다운로드
+- git pull : .git을 포함하지 않음
+> git pull [~에서] [브랜치명]
+> git pull origin master
+> git pull project master
+
+레포지토리에서 파일 가져올때
+6. git clone [주소] [저장할 경로]
+git clone [주소] .
+
+https://github.com/rezina0611/git_test.git
+
+
+실습
+main(윈도우)
+1. 로그인 브랜치 생성 및 이동  
+2. 로그인 작업 (login.txt)
+3. 커밋  commit                
+4. 메인에서 merge   
+5. 깃허브에 push         
+
+
+# login 브랜치 생성 및 이동
+git branch login       
+git checkout login    
+
+# 로그인 작업 파일 생성 (예: login.txt)
+echo "로그인 기능 작성" > login.txt
+
+# 변경사항 스테이징 후 커밋
+git add .   또는   git add login.txt
+git commit -m "로그인 작업 완료"
+
+# 메인 브랜치로 이동
+git checkout master     # 또는 main (저장소에 따라 다름)
+
+# login 브랜치를 master로 병합
+git merge login
+
+# 원격 저장소(깃허브)에 푸시
+git push origin master
+
+
+Node.js  v22.2.0 LTS
+brew install node@22
+
+st

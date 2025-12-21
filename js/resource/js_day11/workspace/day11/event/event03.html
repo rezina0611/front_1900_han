@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>클릭 이벤트(유효성 검사 - blur)</title>
+  <style>
+    label {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <form>
+    <label>
+      <span>아이디</span><input type="text" placeholder="아이디를 입력하세요." name="id">
+    </label>
+    <p id="id-result"></p>
+    <label>
+      <span>비밀번호</span><input type="password" placeholder="password" name="password">
+    </label>
+    <p id="password-result"></p>
+    <button type="button">로그인</button>
+  </form>
+</body>
+<script>
+  const button = document.querySelector("button");
+  const id = document.querySelector("input[name='id']");
+  const password = document.querySelector("input[name='password']");
+  const idResult = document.querySelector("#id-result");
+  const passwordResult = document.querySelector("#password-result");
+  const form = document.querySelector("form");
+
+  // global: node
+  // window: 브라우저
+  // globalThis: 전역변수
+  console.log('globalThis', globalThis)
+  console.log("window", window)
+
+  globalThis.flag = Array.of(false, false);
+
+  id.addEventListener("blur", (e) => {
+    if(!e.target.value){
+      idResult.innerText = "아이디를 입력해주세요."
+      idResult.style.color = "red"
+      globalThis.flag[0] = false;
+      return;
+    }
+    
+    globalThis.flag[0] = true;
+    idResult.innerText = "멋진 아이디네요~!"
+    idResult.style.color = "blue"
+  })
+
+  password.addEventListener("blur", (e) => {
+    if(!e.target.value){
+      passwordResult.innerText = "비밀번호를 입력하세요.";
+      passwordResult.style.color = "red";
+      globalThis.flag[1] = false;
+      return;
+    }
+    passwordResult.innerText = "잘 입력했어요!";
+    passwordResult.style.color = "blue";
+    globalThis.flag[1] = true;
+  })
+
+  button.addEventListener("click", (e) => {
+    // form 태그의 제출 양식 태그들의 데이터를 백엔드로 요청
+    if(globalThis.flag.filter((check) => check).length != 2){
+      alert("정보를 정확히 입력하세요.")
+      return;
+    }
+    form.submit()
+  })
+
+</script>
+</html>

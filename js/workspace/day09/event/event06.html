@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>체크박스 동의</title>
+  <style>
+    label{
+      display:block;
+    }
+  </style>
+</head>
+<body>
+  <!-- 
+    1. 전체 동의 버튼을 체크되면 나머지 checkbox가 모두 checked 상태가 된다.
+    2. 전체 동의 버튼을 해제하면 나머지  checkbox가 모두 checked 상태가 해제 된다.
+    3. 나머지 3개의 체크박스가 모두 클릭되면, 전체 동의 체크박스도 체크 된다.
+    4. 3개중에 하나라도 체크가 해제되면 전체 동의 체크박스가 해제된다.
+  -->
+  <form>
+    <div>
+      <label>
+        <input type="checkbox" name="all" />전체동의
+      </label>
+      <label>
+        <input type="checkbox" name="ch1" class="term"/>서비스 이용약관 동의
+      </label>
+      <label>
+        <input type="checkbox" name="ch2" class="term"/>개인 정보 이용야관 동의
+      </label>
+      <label>
+        <input type="checkbox" name="ch3" class="term"/>광고 수신 동의
+      </label>
+    </div>
+  </form>
+</body>
+<script>
+  const checkboxes = document.querySelectorAll("input[type='checkbox']")
+  const allCheckbox = checkboxes[0];
+  const term = Array.from(document.querySelectorAll(".term"));
+
+  allCheckbox.addEventListener("click", (e) => {
+    console.log('클릭됨!')
+    console.log(e)
+    console.log(e.target.checked)
+    // term.forEach((checkbox) => {
+       //checkbox.checked = e.target.checked
+    // })
+    if(e.target.checked){
+      //체크 상태
+      console.log('체크 됨')
+      term.forEach((checkbox) => {
+        checkbox.checked = true;
+      })
+    }else{
+      //체크 해제됨
+      console.log('체크해제 됨')
+      term.forEach((checkbox) => {
+        checkbox.checked = false;
+      })
+    }
+
+    term.forEach((check) => {
+      check.addEventListener("click", (e) => {
+        allCheckbox.checked = term.map((checkbox) => checkbox.checked)
+        .filter((checked) => checked).length === 3;
+      })
+    })
+  })
+  
+</script>
+</html>

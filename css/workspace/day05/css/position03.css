@@ -1,0 +1,75 @@
+
+body{
+  margin: 0;
+  padding: 51px 0 0 0;
+}
+.icon {
+  width: 28px;
+}
+
+.logo {
+  width: 90px;
+}
+
+.icon-wrap {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.layout {
+  display: flex;
+  justify-content: space-between;
+  width: 1280px;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid rgba(0, 0, 0, .06);
+  height: 50px;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  background-color: white;
+  top: 0; left: 0;
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 3px 4px 0px;
+}
+
+.scroll {
+  height: 3000px;
+  /* background-color: #eee; */
+}
+
+a.book-mark{
+  position: fixed;
+  right: 40px;
+  bottom: 40px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ccc;
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 3px 4px 0px;
+}
+a.book-mark:hover{
+  background-color: #eee;
+
+}
+a.book-mark img{
+  transform: rotate(270deg);
+}
+
+/*overflow*/
+.image-wrap{
+  width: 400px;
+  height: 200px;
+  border: 1px solid red;
+  overflow: hidden;
+}
+.image{
+  width: 800px;
+}

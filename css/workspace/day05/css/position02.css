@@ -1,0 +1,22 @@
+
+#container{
+  position: relative;
+}
+
+.box{
+  width: 200px;
+  height: 200px;
+  position: absolute;
+}
+
+.box:nth-child(1){
+  background-color: yellowgreen;
+  z-index: 1;
+}
+.box:nth-child(2){
+  background-color: blue;
+  z-index: 2;
+}
+.box:nth-child(3){
+  background-color: purple;
+}

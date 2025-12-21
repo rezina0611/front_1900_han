@@ -1,0 +1,70 @@
+프론트과정
+20250911
+
+오리엔테이션
+-평일 프론트엔드 개발 19:00반
+강세환강사 개발-> 프리렌서-> 강의
+-메일주소 :  codefuling@gmail.com
+-메일제목 : 프론트엔드 개발 홍길동
+-메일내용 : 텍스트를 그대로 붙여넣기, 오류에 대한 설명, 캡쳐
+
+
+수업자료공유 :  오픈 카톡방
+수업방식 : 이론(그림 및 설명) -> 메모장(복습) -> 기초예제 -> 기초실습 -> 심화예제 -> 심화실습 -> 과제
+
+수업영상 - 한달정도
+
+조교 시스템 - 멘토님에게 연락 
+
+추석연휴 수강일정
+10/03 개천절 수강없음
+10/10  수강있음
+
+HTML
+CSS
+JS(호이스팅, 프로토타입, 객체, DOM)
+git, gitHub
+Node.js, express, 
+React, Typescript
+next
+
+확장설치
+Live Server
+Auto Rename Tag
+korean Language
+Atom one Dark Theme
+
+설정
+Live server> settings: custom browser
+chrome로 변경
+
+Editor : font Ligatures
+{
+  "files.autoSave": "afterDelay",
+  "editor.fontSize": 20,
+  "editor.tabSize": 2,
+  "editor.fontLigatures": false,
+  "explorer.compactFolders": false,
+  "window.zoomLevel": 1,
+  "editor.minimap.enabled": false,
+  "terminal.integrated.fontSize": 28,
+  "liveServer.settings.donotShowInfoMsg": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "editor.stickyScroll.enabled": false,
+  "workbench.tree.enableStickyScroll": false,
+  "files.autoSaveDelay": 0
+}
+
+font 코드 색상
+- 테마 스킨들 종류
+    - Material Theme
+    - Atom one Dark Theme
+    - Dracula Theme
+    - Sublime Text Theme
+    - Synthwave’84
+
+Atom One Dark Theme
+
+
+윈도우키 + . => 이모지단축키

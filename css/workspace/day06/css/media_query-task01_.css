@@ -1,0 +1,82 @@
+/*
+*  html5resetcss
+*/
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}
+body{line-height:1}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}
+nav ul{list-style:none}
+blockquote,q{quotes:none}
+blockquote:before,blockquote:after,q:before,q:after{content:none}
+a{margin:0;padding:0;font-size:100%;vertical-align:baseline;background:transparent}
+ins{background-color:#ff9;color:#000;text-decoration:none}
+mark{background-color:#ff9;color:#000;font-style:italic;font-weight:bold}
+del{text-decoration:line-through}
+abbr[title],dfn[title]{border-bottom:1px dotted;cursor:help}
+table{border-collapse:collapse;border-spacing:0}
+hr{display:block;height:1px;border:0;border-top:1px solid #ccc;margin:1em 0;padding:0}
+input,select{vertical-align:middle}
+
+/* 스타일 */
+img {
+  width: 300px;
+}
+
+img.star {
+  display: none;
+}
+
+img.dog {
+  display: none;
+}
+
+.box {
+  display: none;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: orange;
+}
+
+/* 키프레임 */
+@keyframes twinkle {
+  0% { opacity: 0; }
+  50% { opacity: 1;}
+  100% { opacity: 0; }
+}
+
+@keyframes bigger-smaller {
+  0% { transform: scale(0.5); }
+  50% { transform: scale(1.5); }
+  100% { transform: scale(0.5); }
+}
+
+@keyframes move-up-down {
+  /* 좌우, 상우 */
+  0% { transform: skew(20deg, 20deg) translate(50px, 50px); }
+  25% { transform: skew(20deg, 20deg) translate(-50px, 100px); }
+  50% { transform: skew(20deg, 20deg) translate(70px, 150px); }
+  75% { transform: skew(20deg, 20deg) translate(-30px, 200px); }
+  100% { transform: skew(20deg, 20deg) translate(0, 250px); }
+}
+
+/* 미디어쿼리 */
+@media screen and (max-width: 767px) {
+  .box {
+    display: block;
+    animation: move-up-down 4s linear 1 forwards;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1279px) {
+  img.dog {
+    display: block;
+    animation: bigger-smaller 1s ease-in-out 3 forwards;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  img.star {
+    display: block;
+    animation: twinkle 1s linear infinite;
+  }
+}

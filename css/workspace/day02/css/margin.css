@@ -1,0 +1,45 @@
+.box{
+  width: 50px; 
+  height: 50px; 
+  background-color: orange;
+  margin: 4px;
+}
+.div1{
+  margin-top: 30px;
+  margin-right: 40px;
+  margin-bottom: 50px;
+  margin-left: 60px;
+}
+.div2{
+  /*위 오른쪽 아래 왼쪽*/
+  margin: 50px 20px 25px 10px;
+}
+/*위아래, 왼쪽오른쪽*/
+.div3{
+  margin: 80px 20px;
+}
+/*네 공간이 모두 같을 때*/
+.div4{
+  margin: 20px;
+}
+.div5{
+  /*블록요소를 중앙에 정렬*/
+  margin: 0 auto;
+}
+
+/*패딩, 안쪽여백*/
+.div6{
+  padding-top: 25px;
+  padding-right: 15px;
+  padding-bottom: 100px;
+  padding-left: 40px;
+}
+.div7{
+  padding: 10px 15px 25px 35px;
+}
+.div8{
+  padding: 100px 25px;
+}
+.div9{
+  padding: 10px;
+}

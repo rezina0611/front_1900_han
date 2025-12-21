@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>이벤트1</title>
+</head>
+<body>
+  <h1>변경할 요소😍</h1>
+  <button>스타일 변경</button>
+</body>
+<script>
+  const btn = document.querySelector("button")
+  const h1 = document.querySelector("h1")
+
+  console.log(btn)
+  console.log(h1)
+
+  // .addEventListener(이벤트종류, 콜백함수)
+  btn.addEventListener("click", (e) => {
+    h1.style.color = "red"
+    h1.innerText = "나 변경됨!😂"
+  })
+
+  // function H1(){
+  //   h1.style.color = "red"
+  //   h1.innerText = "나 변경됨!😂"
+  // }
+  // btn.addEventListener("click", H1)
+</script>
+</html>

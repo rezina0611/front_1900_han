@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>입력 검사</title>
+</head>
+<body>
+  <!-- 
+    사용자가 입력한 색상이 파랑이라면 글자를 blue
+    입력한 색상이 핑크라면 pink
+    오렌지라면 orange
+    그 외 색상이라면 black
+  -->
+  <input type="text" placeholder="색상을 입력하세요.ex)빨강, 파랑"/>
+  <p id="color-result"></p>
+  <button>검사하기</button>
+</body>
+<script>
+  const color = document.querySelector("input[type='text']")
+  const p = document.querySelector("#color-result")
+  const button = document.querySelector("button")
+
+  button.addEventListener("click", (e) => {
+    let value = color.value;
+    if(value === "파랑"){
+      color.style.color = "blue"
+    }else if(value === "오렌지"){
+      color.style.color = "orange"
+    }else if(value === "핑크"){
+      color.style.color = "pink"
+    }else{
+      color.style.color = "black"
+    }
+  })
+
+  color.addEventListener("keydown", (e) => {
+    // if(e.key === 'Enter'){
+      p.innerText = color.value
+    // }
+  })
+
+</script>
+</html>

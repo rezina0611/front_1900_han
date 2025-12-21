@@ -1,0 +1,50 @@
+수업 쿼리 변경
+HTML, CSS / 2개월 => 1개월
+git, git-hub 형상관리(버전관리)
+figma 협업툴
+javaScrtipt    / 2개월
+React.js       / 3~4개월
+- ReactQuery, Redux,  zustand
+- 세미프로젝트   =>  삭제
+- MongoDB       => MySQL(RDB) - DBMS  
+- Node.js,  Express  4~5 개월
+- TypeScrtipt 6개월
+- Next.js
+- Next.ts,  tailwind
+- ORM(prisma)
+- AWS
+
+
+색의 합성         빛의 합성
+
+빛의 색을 모두 합치면 흰색
+
+1Byte = 8bit
+
+16진수  0~ 9,  ABCDEF     #000
+
+
+font-weight : 텍스트 굵기 설정 (100~900)
+   - 100 : thin
+   - 400 : regular (default)
+   - 700 : bold
+   - 900 :extra bold
+
+font-size : 텍스트 크기 설정
+   - px : 1px 절대적인 사이즈
+   - em : 부모 사이즈를 기준으로 상대적으로 바뀌는 크기
+   - rem : 최상위(html) 사이즈를 기준으로 상대적으로 바뀌는 크기
+
+기본 사이즈 16px
+
+텍스트 스타일
+   - color : 텍스트 색상을 변경한다.
+   - letter-spacing : 자간, 문자 단위 간격
+   - word-spacing : 단어 사이 간격
+   - text-align : 텍스트의 정렬 (left, right, center)
+   - line-height : 행간 (줄과 줄 사이 간격)
+   - text-indent : 첫 줄 들여쓰기
+   - text-decoration : 텍스트의 여러 효과 (under-line, line-through)
+   - font-variant : 소문자를 더 작은 크기의 대문자로 변환
+   - text-shadow : 텍스트의 그림자 효과
+   - white-space : 띄어쓰기, 줄바꿈등을 어떻게 할지 여부

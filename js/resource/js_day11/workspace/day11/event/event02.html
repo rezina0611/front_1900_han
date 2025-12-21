@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>클릭 이벤트(유효성 검사)</title>
+  <style>
+    label {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <form>
+    <label>
+      <span>아이디</span><input type="text" placeholder="아이디를 입력하세요." name="id">
+    </label>
+    <p id="id-result"></p>
+    <label>
+      <span>비밀번호</span><input type="password" placeholder="password" name="password">
+    </label>
+    <p id="password-result"></p>
+    <button type="button">로그인</button>
+  </form>
+</body>
+<script>
+  const button = document.querySelector("button");
+  const id = document.querySelector("input[name='id']");
+  const password = document.querySelector("input[name='password']");
+  const idResult = document.querySelector("#id-result")
+  const passwordResult = document.querySelector("#password-result")
+
+  button.addEventListener("click", (e) => {
+    // early return
+    if(!id.value){
+      idResult.innerText = "아이디를 입력하세요."
+      idResult.style.color = "red"
+      return;
+    }
+
+    idResult.innerText = "멋진 아이디네요~!😊"
+    idResult.style.color = "blue"
+
+    if(!password.value){
+      passwordResult.innerText = "비밀번호를 입력하세요."
+      passwordResult.style.color = "red"
+      return;
+    }
+
+    passwordResult.innerText = "잘 적었습니다.😎"
+    passwordResult.style.color = "blue"
+  })
+
+</script>
+</html>

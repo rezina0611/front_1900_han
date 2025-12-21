@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>사칙연산 (calc)</title>
+  <link rel="stylesheet" href="./css/calc.css">
+</head>
+<body>
+  <!--calc()는 CSS에서 산술 연산을 통해 길이나 크기를 동적으로 계산할 수 있는 함수
+  “calc()는 CSS에서 크기나 길이를 수식으로 계산해 적용할 수 있는 함수로, 고정 단위와 가변 단위를 함께 쓸 때 주로 사용합니다.”
+  width: calc(100% - 50px);
+  margin-top: calc(2rem + 10px);
+  px : 절대크기
+  %, px, vw, vh, dvw, dvh : 상대크기
+
+  사이드바 + 콘텐츠 레이아웃
+  .content {
+    width: calc(100% - 250px); /* 전체에서 사이드바(250px) 뺀 크기 */
+    margin-left: 250px;
+  }
+  
+  센터 정렬 + 일정 여백 유지
+  .box {
+    width: calc(50% - 20px); /* 화면 절반 크기에서 여백 보정 */
+    margin: 10px;
+  }
+
+  텍스트 크기 가변 처리
+  h1 {
+    font-size: calc(1rem + 2vw); /* 기본 크기 + 화면 크기에 비례 */
+  }
+
+  헤더/푸터를 뺀 영역 계산
+  .main {
+    height: calc(100vh - 100px); /* 전체 높이에서 헤더·푸터 합(100px) 제외 */
+  }
+
+  상대 단위 + 절대 단위 혼합
+  .container {
+      padding: calc(2% + 10px); /* 화면 크기에 따라 늘어나면서 최소 여백 보장 */
+  }
+-->
+  <!-- <div id="m-wrap">
+    <div id="content"></div>
+  </div> -->
+
+  <div class="image-wrapper"> </div>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>nth-child 선택자</title>
+  <style>
+    /*하나를 선택할때*/
+    /* #container li:nth-child(3) {
+      color: blue;
+    } */
+
+    /*여러 개를 선택할때 뒤에서 n부터 선택*/
+    /* #container li:nth-child(n + 3) {
+      color: blue;
+    } */
+
+    /*앞에서 n부터 선택*/
+    /* #container li:nth-child(-n + 3) {
+      color: blue;
+    } */
+
+    /*3~7까지*/
+    /* #container li:nth-child(n + 3):nth-child(-n + 7) {
+      color: blue;
+    } */
+
+    #container li:first-child {
+      color: blue;
+    }
+
+    #container li:last-child {
+      color: blue;
+    }
+
+    #container li:nth-last-child(3) {
+      color: blue;
+    }
+  </style>
+</head>
+<body>
+  <!--n : 자연수 th : 순위  몇번째 자식인지 -->
+  <ul id="container">
+    <li>container의 자식</li>
+    <li>container의 자식</li>
+    <li>container의 자식</li>
+    <li>container의 자식</li>
+    <li>container의 자식</li>
+    <li>container의 자식</li>
+    <li>container의 자식</li>
+    <li>container의 자식</li>
+    <li>container의 자식</li>
+    <li>container의 자식</li>
+  </ul>
+</body>
+</html>

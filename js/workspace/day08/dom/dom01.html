@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM API 01</title>
+  <style>
+    .dom-api{color: blue;}
+    .dom-test{color: red;}
+  </style>
+</head>
+<body>
+  <p class="dom-api">Hello, DPM API! </p>
+</body>
+<script>
+  const p = document.querySelector('.dom-api')
+  console.log(p.className)
+  p.className = "dom-test"
+  console.log(p)
+
+  //Hello, world로 p태그의 내용을 변경
+  p.innerHTML = "Hello, world"
+  p.innerText = "Hello, world"
+</script>
+</html>

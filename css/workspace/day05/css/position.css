@@ -1,0 +1,22 @@
+
+#container{
+  width: 1000px;
+  height: 600px;
+  border: 2px solid #000;
+  position: relative;
+}
+
+#wrap{
+  width: 600px;
+  height: 400px;
+  border: 2px solid red;
+  position: relative;
+}
+
+.image{
+  width: 200px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}

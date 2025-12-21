@@ -1,0 +1,83 @@
+디스플레이 flex
+   - flexible box, flexbox라고 부른다. 요소의 크기와 순서를 유연하게 수정할 수 있으며,
+   한 줄에 요소를 배치하는 속성이다. 단, 요소의 크기보다 브라우저의 크기가 작아지면
+   한 줄에 꽉 차 보이도록 크기를 조절한다.
+
+   1) 자신이 가진 내용물의 width 만큼만 차지하게 되며, 
+   - width, height를 지정할 수 있다.(inline-block 속성과 동일하다.)
+
+   2) flex-direction : column, row, column-reverse, row-reverse
+   - flex container가 가지고 있는 자식을 어떻게 배치할 지 정하는 속성이다.
+   flex가 정렬되는 기본 방향을 메인 축(main axis)이라고 한다. 
+   flex가 정렬되는 반대 방향을 반대 축(cross axis)이라고 한다.
+
+   3) justify-content
+   - 메인 축의 정렬을 정하는 속성이다.
+   - space... : 자식간의 사이 간격을 조정하는 속성이다.  
+   space-around
+   space-between
+   space-evenly 
+
+   4) align-items
+   - 반대 축의 정렬을 정하는 속성이다.
+
+   5) flex-wrap
+   - flex container가 가지고 있는 자식 요소의 크기가 부모보다 커질 때(넘칠 때)
+   어떻게 처리할 지 정하는 속성이다.
+
+   6) align-self
+   - 자식이 자기 자신의 위치를 정하는 속성
+   
+   7) order
+   - 자식의 순서를 결정한다. default 0
+
+   8) gap 
+   - 간격
+
+   9) flex-shrink : 사이즈 그대로 유지
+   - 항목의 축소 요소를 설정하는 속성
+
+   10) flex-grow : 
+   - 부모의 남은 공간을 얼마나 차지할 지 정하는 속성
+
+
+   https://codepen.io/
+
+
+   https://gsap.com/docs/v3/
+
+
+   https://developer.mozilla.org/ko/docs/Web/CSS/::-webkit-scrollbar
+
+
+   https://unsplash.com/ko
+
+
+   https://www.iconfinder.com/icons
+
+
+   position의 정의
+   - static : 일반적인 문서의 흐름에 따라 배치한다 (defalut)
+   - relative : 각 요소들을 하나로 겹치게 한 뒤 z-index를 사용해야 할 때
+   - absolute : 부모의 relative 요소를 찾은 뒤 해당 테두리 영역 내에서 움직이도록 한다.
+   단 absolute로 요소를 겹치게 하면 신경 쓸 것이 더 많아진다 
+   - fixed : 문서상의 흐름을 무시하고, 최상위 조상 요소를 기준으로 잡는다.
+   - sticky : 문서의 스크롤을 따라오게 만든다.
+       단, 부모 요소에 overflow 속성이 있다면 사용이 불가능하다.
+
+
+미디어 쿼리
+    - 단말기의 유형에 따라 화면에 해상도가 다르므로, 사용자가 보고 있는 뷰 포트에 따라서 다른 유형의 화면(레이아웃)을 보여주는 쿼리
+
+@media [media-type] and ([media-feature-rule]) {
+   
+}
+
+미디어 타입의 조건
+and : 둘 다 만족하면 true
+or : 둘 중 하나라도 만족하면 true
+not : true를 false로  false를 true로
+
+미디어 타입 종류
+
+all, braille, embossed, handheld, print, projection, screen, speech, tty, tv

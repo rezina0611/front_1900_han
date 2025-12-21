@@ -1,0 +1,78 @@
+/* .dog{
+  transform: translate(200px, 200px);
+} */
+
+.dog {
+  animation: move 5s ease-in-out 1s 2 forwards;
+  /* animation: move 5s ease-in-out 최소 3개 이상 넣어야함*/
+}
+
+.wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  height: 400px;
+}
+.wrap .box{
+  width: 100px;
+  height: 100px;
+  background-color: orange;
+}
+.wrap .box:nth-child(1){
+  animation: move-up-down 0.3s linear;}
+.wrap .box:nth-child(2){
+  animation: move-up-down 0.3s linear 0.2s;}
+.wrap .box:nth-child(3){
+  animation: move-up-down 0.3s linear 0.4s;}
+.wrap .box:nth-child(4){
+  animation: move-up-down 0.3s linear 0.6s;}
+.wrap .box:nth-child(5){
+  animation: move-up-down 0.3s linear 0.8s;}
+.wrap .box:nth-child(6){
+  animation: move-up-down 0.3s linear 1s;}
+
+p {
+  font-size: 50px;
+  animation: move-up-text 0.6s linear forwards;
+  opacity: 0;
+}
+
+@keyframes move-up-text {
+  from {
+    transform:  translate(0, 50px);
+  }
+  to {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+}
+
+
+@keyframes move-up-down {
+  0% {transform: translate(0, 0);}
+  50% {transform: translate(0, -100px);}
+  100% {transform: translate(0, 0);}
+}
+
+
+@keyframes move {
+  0% {
+    transform: translate(100px, 0);
+  }
+  20% {
+    transform: translate(100px, 100px);
+  }
+  40% {
+    transform: translate(300px, 100px);
+  }
+  60% {
+    transform: translate(300px, 0);
+  }
+  80% {
+    transform: translate(150px, 0);
+  }
+  100% {
+    transform: translate(-10000px, 0);
+  }
+}

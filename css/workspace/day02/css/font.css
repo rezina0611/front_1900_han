@@ -1,0 +1,46 @@
+/* h1{
+  font-size: 50px;
+  font-weight: 200;
+  color: red;
+} */
+
+h1{font-size: 2em;}
+p{font-size: 2em;}
+span{font-size: 2em;}
+
+/* 폰트 패밀리를 적용 */
+/* @font-face {
+  font-family: 'Kkukkkuk';
+  src: url('../assets/memomentKkukkkuk.ttf') format('truetype');
+}
+body{
+  font-family: 'kkukkkuk';
+} */
+
+/*태그를 하나 만들고, 눈누 폰트에서 원하는 폰트를 들고와서 적용시키기*/
+@font-face {
+  font-family: 'Pretendard';
+  src: url('../assets/Pretendard-Thin.woff2') format('woff2');
+  font-weight: 100;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Pretendard';
+  src: url('../assets/Pretendard-Medium.woff2') format('woff2');
+  font-weight: 600;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Pretendard';
+  src: url('../assets/Pretendard-Black.woff2') format('woff2');
+  font-weight: 900;
+  font-display: swap;
+}
+
+.basic{
+  font-weight: 900;
+}
+
+.pretendard{
+  font-weight: 400;
+}

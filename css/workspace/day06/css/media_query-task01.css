@@ -1,0 +1,66 @@
+
+
+/* mobile : 345px ~ 767px */
+@media screen and (max-width: 767px) {
+  .box{
+    display: block;
+    /* display: none; */
+    width: 100px;
+    height: 100px;
+    background-color: orange;
+    border-radius: 50%;
+    transform: skew(10deg, 10deg);
+    /* animation: move-up-down 4s linear 1 forwards; */
+  }
+
+  @keyframes move-up-down{
+    0%   {transform: skew(20deg, 20deg) (50px, 50px);}
+    25%  {transform: skew(20deg, 20deg) translate(-50px, 100px);}
+    50%  {transform: skew(20deg, 20deg) translate(70px, 150px);}
+    75%  {transform: skew(20deg, 20deg) translate(-30px, 200px);}
+    100% {transform: skew(20deg, 20deg) translate(0, 250px);}
+  }
+}
+
+
+/* tablet : 768px ~ 1279px */
+@media screen and (min-width: 768px) and (max-width: 1279px) {
+  img.dog{
+    display: block;
+    animation: bigger-smaller 1s ease-in-out infinite;
+  }
+
+  @keyframes bigger-smaller{
+    0% { width: 50%; }   /*transform: scale(0.5)*/ 
+    50% { width: 150%; } /*transform: scale(1.5)*/
+    100% { opacity: 0; } /*transform: scale(0.5)*/
+  }
+  /* .star{
+    font-size: 100px;
+    animation: scale 2s infinite;
+  }
+
+  @keyframes scale {
+    0% { font-size: 100px; }
+    50% { font-size: 150px; }
+    100% { font-size: 200px; }
+  } */
+}
+
+
+/* desktop : 1280px ~ */
+@media screen and (min-width: 1280px) {
+  .star{
+  font-size: 100px; 
+  color: yellowgreen;
+  animation: blink 1s linear infinite;
+  }
+
+  @keyframes blink {
+    /* from {opacity: 0;}
+    to {opacity: 1;} */
+    0% { opacity: 1; }   
+    50% { opacity: 0; } 
+    100% { opacity: 1; }
+  }
+}

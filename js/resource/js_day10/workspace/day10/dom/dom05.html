@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS를 이용한 선택자</title>
+</head>
+<body>
+    
+    <ul>
+        <li class="item">치킨</li>
+        <li class="item">떡볶이</li>
+        <li class="item">피자</li>
+        <li class="item">불족발</li>
+        <li class="item">마늘족발</li>
+    </ul>
+
+</body>
+<script>
+    // 족발이 들어간 글자들만 글자 색깔을 그린색깔로 변경
+    // const food = document.querySelector("#item")
+    // const foods = document.querySelectorAll("li")
+    const foods = document.querySelectorAll(".item")
+    Array
+        .from(foods)
+        .filter((li) => li.innerText.includes("족발"))
+        .forEach((li) => {
+            li.style.color = "green"
+        })
+
+</script>
+</html>

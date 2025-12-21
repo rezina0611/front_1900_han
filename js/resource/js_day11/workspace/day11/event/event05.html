@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>체크박스</title>
+</head>
+<body>
+  <label><input type="checkbox" value="선택1">선택1</label>
+  <label><input type="checkbox" value="선택2">선택2</label>
+  <label><input type="checkbox" value="선택3">선택3</label>
+  <p id="result"></p>
+</body>
+<script>
+  // appendChild(), removeChild()
+  // document.createElement("")
+  const checkboxes = Array.from(document.querySelectorAll("input[type='checkbox']"));
+  const result = document.getElementById("result")
+
+  checkboxes.forEach((checkbox, i, arr) => {
+    checkbox.addEventListener("click", (e) => {
+      if(e.target.checked){
+        const strong = document.createElement("strong")
+        strong.innerText = e.target.value
+        strong.style.marginRight = "8px"
+        result.appendChild(strong)
+      }else {
+        const strongs = Array.from(document.querySelectorAll("#result strong"))
+        const target = strongs.filter((strong) => strong.innerText === e.target.value)[0]
+        result.removeChild(target)
+      }
+    })
+  })
+
+</script>
+</html>
