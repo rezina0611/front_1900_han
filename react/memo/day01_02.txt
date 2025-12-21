@@ -1,0 +1,109 @@
+패키지 관리툴
+   - 라이브러리들을 관리하고 설치할 수 있는 도구
+  - npm, npx, yarn, yarn2,3(yarn berry)
+    
+npm
+   - node 에서 기본적으로 내장 되어있는 패키지 관리 툴
+
+ex)
+   npm i(install) 라이브러리명 — 설치
+   npm rm(remove) 라이브러리명 — 삭제
+   -g 노드 환경 자체에 설치
+   -d 개발자 환경에서 설치
+   
+yarn
+- 과거이세는 npm보다 속도, 안정성, 보안 모두 뛰어나서 이목을 끌었지만 현재 크게 차이가 없다.
+
+React 설치 명령어
+   1. Powershell 사전 설정
+   > Set-ExecutionPolicy -ExecutionPolicy Bypass
+
+   2. React 설치 명령어
+   > npm i -g yarn
+   > yarn global add create-react-app
+   > yarn create react-app [폴더이름]
+   ex) 
+      yarn create react-app . (현재폴더 설치)
+      
+React 실행 명령어
+   > yarn start
+
+React 실행 종료
+   > ctrl + c  
+
+
+
+React란?
+   - 복잡한 사용자 인터페이스(UI)를 쉽게 구축하기 위해 페이스북에서 제작된 자바스크립트 기반의 라이브러리
+   - 싱글 페이지 애플리케이션이나 모바일 애플리케이션 개발에 주로 사용된다.
+   - 특정 데이터에 변화가 생길 때 매 번 변화를 주기 위한 코드를 작성하는 것이 아니라,
+   기존 코드를 없애고 다시 새롭게 랜더링한다.
+
+랜더링(Rendering)
+   - 화면에 보여주는 것
+   - 코드가 번역(컴파일)되어 실행된 뒤 화면을 통해 사용자에게 보여진다.
+
+초기 랜더링(Mount) 마운트
+   - 가장 처음으로 랜더링 되는 것
+   - render() 함수를 사용하여 view를 정의하고 초기 랜더링을 진행하게 된다.
+
+리랜더링(Re-rendering)
+   - 뷰를 업데이트 해야 할 때 다시 지웠다가 그려야하며, 이를 리 랜더링이하고 한다.
+   - 전체를 모두 지우고 다시 그리는 것은 비효율적이므로, 
+   이전의 DOM트리와 새로운 DOM 트리를 비교하여
+   변경된 요소만 리랜더링한다.
+   - 단, 부모가 리랜더링되면 자식도 리랜더링 된다.
+   - 반대로 자식이 리랜더링 된다면, 부모가 리랜더링 될 수도 있다.
+
+컴포넌트(Component)
+   - 리액트에서 앱을 이루는 최소한의 단위를 의미한다.
+   - 컴포넌트가 모여서 하나의 앱이 되며, 각 컴포넌트는 분리되어 재사용이 가능하다.
+컴포넌트 단위로 사이트를 구성
+
+버츄얼 돔(Virtual DOM)
+   - 화면보다 가상돔에 먼저 랜더링 된다.
+   - 이전 Virtual DOM과 현재 Virtual DOM을 비교하여 이로 인해 변화가 되어
+   변경이 필요한 부분을 리랜더링 시킨다.
+   - react가 가지고 있는 가상 돔의 복사본이며, state(상태)의 변화를 react에서 감지하고 있다가
+   state의 변화가 생기면 해당 state를 가지고 있는 components의 가상 돔과 실제 돔을 비교하여
+   변화가 생긴 components만 리랜더링 한다.
+
+리액트는 JSX 문법  JavaScript + XML / HTML
+
+HTML 은 태그를 변경할수 없다
+XML은 태그를 변경가능
+XML / 닫기가 있어야 한다.
+
+<React.Fragment> {/**<></> */}
+      <div>리액트 내꺼!</div>
+      <div>리액트는 우리 모두의 것!</div>
+    </React.Fragment>
+
+
+function App() {
+  return (
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
+    </div>
+  );
+}
+
+프롭스
+
+
+useRef란?
+   - useRef는 저장공간 또는 DOM요소에 접근하기 위해 사용되는 React Hook이다. 
+   여기서 Ref는 reference, 즉 참조를 뜻한다.

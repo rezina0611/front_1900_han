@@ -1,0 +1,30 @@
+import styled from "styled-components";
+import { flexCenter, flexCenterColumn, flexColumn } from "../../styles/common";
+
+const S = {}
+
+  S.Wrapper = styled.form`
+    ${flexColumn}
+    width: 200px;
+  `
+
+  S.InputWrap = styled.div`
+    ${flexColumn}
+  `
+
+  S.Img = styled.img`
+    width: ${({width}) => width};
+  `
+
+  S.ImageWrapper = styled.div`
+    width: 800px;
+    height: 800px;
+    border: solid 1px blue;
+    ${flexCenter}
+  `
+
+  S.IconWrapper = styled.div`
+    ${flexCenterColumn}
+  `
+
+export default S;
