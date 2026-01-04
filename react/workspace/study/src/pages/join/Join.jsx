@@ -6,33 +6,33 @@ import S from './style';
 const Join = () => {
   const { register, handleSubmit, getValues, formState: {errors, isSubmitted, isSubmitting}} = useForm({mode:"onChange"})
 
-  const join = handleSubmit((data) => {
+  const join = handleSubmit(async (data) => {
     //fetch
-    console.log(data)
-    const {memberEmail, memberPassword} = data
-    // fetch("http://localhost:4000/posts", {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    //   body: JSON.stringify({
-    //     memberEmail: memberEmail,
-    //     memberPassword: memberPassword
-    //   })
-    // })
+    const {memberEmail, memberPassword, memberName} = data
+    console.log(memberEmail)
+    console.log(memberPassword)
+    console.log(memberName)
+    const member = {
+      memberEmail: memberEmail, 
+      memberPassword: memberPassword, 
+      memberName: memberName
+    }
 
-    // fetch("http://localhost:4000/posts/f995", {
-    //   method: "PUST",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    //   body: JSON.stringify({
-    //     memberEmail: memberEmail,
-    //     memberPassword: memberPassword
-    //   })
-    // })
-    fetch("http://localhost:4000/posts/f995", {
-      method: "DELETE"})
+    //추가: POST
+    //수정: PUT
+    const response = await fetch("http://localhost:4000/members/1", {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(member)
+    })
+
+    //console.log(response)
+    if(!response.ok) throw new Error("Data Fetching Error")
+    const datas = await response.json();
+    console.log(datas)
+
   })
 
   const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
@@ -66,7 +66,7 @@ const Join = () => {
           <p>비밀번호</p>
           <input 
             type="password" 
-            placeholder='이메일을 입력하세요'
+            placeholder='비밀번호을 입력하세요'
             {...register("memberPassword", {
               required: true,
               pattern: {
@@ -86,7 +86,7 @@ const Join = () => {
           <p>비밀번호 확인</p>
           <input 
             type="password" 
-            placeholder='이메일을 입력하세요'
+            placeholder='다시한번 비밀번호을 입력하세요'
             {...register("memberPasswordConfirm", {
               required: true,
               validate: {
@@ -103,13 +103,22 @@ const Join = () => {
         )}
         </S.Label>
 
+        <S.Label>
+          <p>이름</p>
+          <input 
+            type="text" 
+            placeholder='이름을 입력하세요'
+            {...register("memberName")}
+          />
+        </S.Label>
+
         {/**체크박스 */}
-        <div>
+        {/* <div>
           <p>취미</p>
           <label><input type="checkbox" name="hobby" value="soccer" {...register("hobbies")} /><span>축구</span></label>
           <label><input type="checkbox" name="hobby" value="basketball" {...register("hobbies")} /><span>농구</span></label>
           <label><input type="checkbox" name="hobby" value="baseball" {...register("hobbies")} /><span>야구</span></label>
-        </div>
+        </div> */}
 
         <button disabled={isSubmitting}>회원 가입</button>
       </form>

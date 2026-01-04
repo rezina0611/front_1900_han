@@ -18,9 +18,11 @@ const PostContainer = () => {
   }, [])
   
   const titles = posts.map(({id, title}, i) => {
-    <li key={i}>
-      <Link to={`/posts/read/${id}`}>{title}</Link>
-    </li>
+    return (
+      <li key={i}>
+        <Link to={`/posts/read/${id}`}>{title}</Link>
+      </li>
+    )
   })
 
   return (

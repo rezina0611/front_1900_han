@@ -1,0 +1,92 @@
+리액트 쿼리(React-Query, TanStack Query)
+	- 서버로부터 데이터 가져오기, 데이터 캐싱, 캐시 제어 등 데이터를 쉽고 
+	효율적으로 관리할 수 있는 라이브러리이다. v4부터 Vue나 Svelte 등의 
+	다른 프레임워크에서도 활용할 수 있도록 기능이 확장되며 TanStack Query라는 이름으로 변경되었다.
+	- 주로 대규모 프로젝트에 데이터 캐싱을 관리하기 위해 사용된다
+	- https://tanstack.com/query/latest/docs/framework/react/overview
+
+
+리액트 쿼리의 주요 기능
+	- 데이터 가져오기 및 캐싱
+	- 동일 요청의 중복 제거
+	- 신선한 데이터 유지
+	- 무한 스크롤, 페이지네이션 등의 성능 최적화
+	- 네트워크 재연결, 요청 실패 등의 자동 갱신
+
+
+리액트 쿼리 주요 동작 설명
+1. queryKey
+	- TanStack Query를 활용해서 데이터를 가져올 때는 항상 쿼리 키(queryKey)를 지정한다.
+	이 쿼리 키는 캐시된 데이터와 비교해 새로운 데이터를 가져올지, 캐시된 데이터를 사용할지 결정하는 기준이 된다
+	즉, 일치하는 Key가 없다면 새로운 데이터를 불러온다. 반대로 Key가 있다면 요청하지 않고 캐시된 데이터를 불러온다.
+	
+2. staleTime
+	- 데이터의 신선도*를 관리한다. 캐시된 데이터가 신선하다면 캐시된 데이터를 사용하고, 
+	만약 데이터가 상했다면(Stale) 서버에 다시 요청해 신선한(Frash) 데이터를 가져온다
+	
+3. queryClient
+	- React Query의 캐시 관리자 객체이여, useQuery, useMutation 등 캐시를 관리하는 객체이다.
+
+4. QueryClientProvider
+	- queryClient를 제공하는 Context이다.
+	
+5. useQuery
+	- const 반환 = useQuery(옵션)
+	
+6. useQuery 주요 옵션 정리
+	- queryKey (필수): 쿼리를 식별하는 고유 키. 배열 형태로 지정
+	ex) ['user', id]
+
+	- queryFn (필수): 데이터를 가져오는 비동기 함수 (Promise 반환 필수)
+	ex) () => fetchUser(id)
+
+	- enabled: 쿼리 자동 실행 여부
+	false일 경우 수동 실행만 가능
+	ex) enabled: !!id
+
+	- staleTime: 데이터가 “신선”하다고 간주되는 시간(ms)
+	ex) staleTime: 5 * 60 * 1000  // 5분
+
+	- cacheTime (gcTime): 비활성 쿼리가 캐시에 유지되는 시간(ms)
+	ex) cacheTime: 10 * 60 * 1000  // 10분
+
+	- refetchOnWindowFocus: 브라우저 포커스 시 자동 재요청 여부
+	ex) refetchOnWindowFocus: false
+
+	- refetchOnReconnect: 네트워크 재연결 시 자동 재요청 여부
+	ex) refetchOnReconnect: true
+
+	- refetchOnMount: 컴포넌트 마운트 시 자동 재요청 여부
+	ex) refetchOnMount: false
+
+	- retry: 실패 시 재시도 횟수
+	ex) retry: 1  // 한 번만 재시도
+	ex) retry: false  // 재시도 비활성화
+
+	- select: 가져온 데이터 중 필요한 부분만 선택
+	ex) select: (data) => data.result
+
+	- placeholderData: 로딩 중에 임시로 보여줄 데이터
+	ex) placeholderData: { name: '로딩 중...' }
+
+	- initialData: 쿼리 실행 전 기본 데이터 (SSR 등에서 유용)
+	ex) initialData: { id: 1, name: '기존 유저' }
+
+	- refetchInterval: 주기적으로 데이터 자동 갱신(ms)
+	ex) refetchInterval: 10000  // 10초마다 갱신
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,47 @@
+import React from 'react';
+import { useForm } from 'react-hook-form';
+import S from './style';
+
+const Join = () => {
+
+  const { register, handleSubmit, getValues, formState: { errors, isSubmitted, isSubmitting }} = useForm({mode:"onChange"})
+
+  const join = handleSubmit((data) => {
+    console.log(data)
+  })
+
+  const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[!@#])[\da-zA-Z!@#]{8,}$/;
+
+  console.log(errors)
+
+  return (
+    <div>
+      <form onSubmit={join}>
+        <label>
+          <p>이메일</p>
+          <input 
+            type="text" 
+            placeholder='이메일을 입력하세요'
+            {...register("memberEmail", {
+              required: true,
+              pattern: {
+                value: emailRegex
+              }
+            })}
+          />
+        {errors && errors?.memberEmail?.type === "required" && (
+          <S.ErrorMessage>이메일을 입력하세요.</S.ErrorMessage>
+        )}
+        {errors && errors?.memberEmail?.type === "pattern" && (
+          <S.ErrorMessage>이메일 양식에 맞게 입력하세요.</S.ErrorMessage>
+        )}
+        </label>
+
+        <button disabled={isSubmitting}>회원 가입</button>
+      </form>
+    </div>
+  );
+};
+
+export default Join;
